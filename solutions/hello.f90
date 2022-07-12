@@ -6,7 +6,7 @@ integer i
 
 !$OMP PARALLEL private(i)
 !$ i=OMP_GET_THREAD_NUM()
- print(*,*) 'Hello world', i
+ write(*,*) 'Hello world', i
 !$OMP END PARALLEL
 
 end program hello
