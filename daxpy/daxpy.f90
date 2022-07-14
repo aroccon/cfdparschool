@@ -23,7 +23,7 @@ a=3.0d0
 call cpu_time(t1)
 call daxpy(n,a,x,y)
 call cpu_time(t2)
-write(*,*) 'Time elapsed:', t2-t1
+write(*,*) 'Time elapsed (serial):', t2-t1
 
 deallocate(x,y)
 

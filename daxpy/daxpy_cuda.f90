@@ -14,17 +14,19 @@ end module mymod
 program main
 use cudafor
 use mymod
+integer ::n=50000000,i,istat
+double precision :: a
 double precision, device :: x_d(n), y_d(n)
-double precision :: a=3.0d0
-real :: t1,t2
-integer :: n=500000000, istat
+double precision :: t1,t2
+
 x_d=1.0
 y_d=2.0
+a=3.0d0
 
 call cpu_time(t1)
 call daxpy<<<4096, 256>>>(2**25,a,x_d,y_d)
 istat = cudaDeviceSynchronize()
 call cpu_time(t2)
-write(*,*) 'Time elapsed:', t2-t1
+write(*,*) 'Time elapsed (CUDA):', t2-t1
 
 end program
