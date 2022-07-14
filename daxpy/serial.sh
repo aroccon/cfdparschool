@@ -1,1 +1,1 @@
-gfortran  saxpy.f90  -o saxpy
+gfortran  daxpy.f90  -o daxpy
