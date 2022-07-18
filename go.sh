@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account="   "
+#SBATCH --account="tra22_CFD"
 #SBATCH --job-name="cfdparschool"
 #SBATCH --time=00:01:00
 #SBATCH --nodes=1      ##adjust
@@ -16,4 +16,4 @@ export LC_ALL=en_US.UTF-8
 module purge
 module load hpc-sdk/2021--binary
 
-./daxpy
+./application_name
