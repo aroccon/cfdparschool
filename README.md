@@ -16,7 +16,3 @@ G. Soligo (https://github.com/giovannisoligo): OpenMP part.
 - miniweather: miniAPP MPI+X accelerated using MPI + openACC, credit: https://github.com/mrnorman/miniWeather/tree/main/fortran
 - daxpy: DAXPY benchmark for comparison OpenMP (CPU & GPU), OpenACC and CUDA Fortran.
 - solutions, solutions for most of the exercises.
-
-# Google Classroom
-
-https://classroom.google.com/c/NDg4NTYwMzExMzA0?cjc=etr44up
