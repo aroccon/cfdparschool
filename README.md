@@ -3,7 +3,7 @@
 Source code for the hands-on session of the CFDPARSCHOOL (https://www.cfdparschool.com).
 
 Code developers:
-* A. Roccon (https://github.com/keroro90): OpenACC, OpenMP, Coarrays & CUDA Intro.
+* A. Roccon (https://github.com/aroccon): OpenACC, OpenMP, Coarrays & CUDA Intro.
 * G. Soligo (https://github.com/giovannisoligo): OpenMP part.
 
 ### List of Exercirces
@@ -13,7 +13,7 @@ List of source codes:
 * pi: Computation of Pi using OpenMP.
 * heated_plate: Jacobi Solver parallelized using OpenMP
 * drop: Advection of a density field using FVM solver.
-* modern_fortran: coarrays (hello and pi) and standard parallelism (do concurrent)
+* modern_fortran: coarrays (hello and Pi) and standard parallelism (do concurrent)
 * test_openaCC: Configuration test of OpenACC.
 * jacobi: Jocobi Solver accelerated using OpenACC.
 * miniweather: miniAPP MPI+X accelerated using MPI + openACC, credit: https://github.com/mrnorman/miniWeather/tree/main/fortran
