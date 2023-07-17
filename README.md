@@ -13,7 +13,7 @@ List of source codes:
 * pi: Computation of Pi using OpenMP.
 * heated_plate: Jacobi Solver parallelized using OpenMP
 * drop: Advection of a density field using FVM solver.
-* modern_fortran: coarrays (hello and pi) and standar parallelism (do coccurent)
+* modern_fortran: coarrays (hello and pi) and standard parallelism (do concurrent)
 * test_openaCC: Configuration test of OpenACC.
 * jacobi: Jocobi Solver accelerated using OpenACC.
 * miniweather: miniAPP MPI+X accelerated using MPI + openACC, credit: https://github.com/mrnorman/miniWeather/tree/main/fortran
