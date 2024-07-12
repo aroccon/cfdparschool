@@ -1,14 +1,16 @@
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH --account="tra24_CFD"
+#SBATCH --job-name="cfdparschool"
+#SBATCH --time=00:10:00
+#SBATCH --nodes=1      ##adjust
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
-#SBATCH -p g100_usr_interactive
-#SBATCH -A tra23_cfd
-#SBATCH -t 00:10:00 
+#SBATCH --output=test.out
+#SBATCH -p boost_usr_prod
+#SBATCH --error=test.err
 
-module load nvhpc/22.3 
+module load nvhpc/24.3 
 
-echo $HOSTNAME > hostname.dat
-./application_name  > out.4096.C.$SLURM_JOBID.dat
+#echo $HOSTNAME > hostname.dat
+#./application_name  > out.4096.C.$SLURM_JOBID.dat
+./miniweather_acc
