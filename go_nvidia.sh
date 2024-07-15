@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account="tra24_CFD"
+#SBATCH --account="tra24_sumcfd"
 #SBATCH --job-name="cfdparschool"
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1      ##adjust
