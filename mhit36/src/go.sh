@@ -1,17 +1,20 @@
-module purge
-module load nvhpc/24.3
+#!/bin/bash
+#SBATCH --account="IscrB_EXCEED"
+#SBATCH --job-name="toy36"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1     
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:1   
+#SBATCH --output=test.out
+#SBATCH --error=test.err
+#SBATCH -p boost_usr_dbg
+
+# to avoid perl warning
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+# load modules
+module load nvhpc/23.11
 module load cuda/12.1
-rm *.mod
-rm mhit36
-make clean
-make
-make
+module list
 
-rm -rf output
-mkdir output
-rm *.o
-
-#run the code
-#./mhit36
-
-
+./mhit36

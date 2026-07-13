@@ -27,7 +27,7 @@ Performance (only NS)
 * Use compile.sh in the src/folder
 
 #### To run a simulation (on Leonardo)
-* go to src folder and submit ./go.sh
+* go to src folder and submit go.sh to the SLURM
 
 #### Parallelization strategy
 * The code is serial and exploit a single GPU.
