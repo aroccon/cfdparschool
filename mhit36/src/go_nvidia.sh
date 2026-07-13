@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --account="tra24_sumcfd"
-#SBATCH --job-name="flo36gpu_test"
+#SBATCH --account="s_tra_cfd_*"
+#SBATCH --job-name="toy36"
 #SBATCH --time=00:05:00
-#SBATCH --nodes=1      ##adjust
+#SBATCH --nodes=1     
 #SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:1   ###4 GPUs per node on 4 MPI tasks
+#SBATCH --gres=gpu:1   
 #SBATCH --output=test.out
 #SBATCH --error=test.err
 #SBATCH -p boost_usr_prod

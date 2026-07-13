@@ -35,8 +35,3 @@ module phase
    double precision, allocatable :: fxst(:,:,:), fyst(:,:,:), fzst(:,:,:)
 end module phase
 
-
-module particles
-   double precision, allocatable :: xp(:,:), vp(:,:), ufp(:,:), fp(:,:)
-   integer, parameter :: ptype=1 !(1=tracer, 2=inertial)
-end module particles

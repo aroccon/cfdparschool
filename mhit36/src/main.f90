@@ -15,10 +15,8 @@ use fastp
 use param
 use velocity
 use phase
-use particles
 
 #define phiflag 1
-#define partflag 0
 #define openaccflag 1
 
 implicit none
@@ -76,10 +74,7 @@ allocate(normx(nx,nx,nx),normy(nx,nx,nx),normz(nx,nx,nx))
 allocate(curv(nx,nx,nx),gradphix(nx,nx,nx),gradphiy(nx,nx,nx),gradphiz(nx,nx,nx))
 allocate(fxst(nx,nx,nx),fyst(nx,nx,nx),fzst(nx,nx,nx))
 #endif
-!particles arrays
-#if partflag == 1
-allocate(xp(np,3),vp(np,3),ufp(np,3),fp(np,3))
-#endif
+
 
 x(1)=0.0d0
 do i=2,nx
@@ -124,11 +119,6 @@ do k = 1,nx
 enddo
 #endif
 
-#if partflag == 1
-write(*,*) 'Initialize particles'
-call random_number(xp)
-xp=xp*lx
-#endif
 
 !initialize the plan for cuFFT
 call init_cufft
@@ -142,9 +132,7 @@ call writefield(t,4)
 #if phiflag == 1
 call writefield(t,5)
 #endif
-#if partflag == 1 
-call writepart(t)
-#endif
+
 
 !use later for FFT (no need to load them afterwards)
 !!!$acc enter data create(p,pc)
@@ -274,7 +262,7 @@ do t=1,tfin
     enddo
    
 
-    ! Compute new phase field n+1
+    ! Compute new phase field n+1 (Euler explicit)
     do i=1,nx
         do j=1,nx
             do k=1,nx
@@ -434,12 +422,8 @@ do t=1,tfin
         enddo
     enddo
 
-
-
     ! call Poisson solver (3DFastPoissons + periodic BCs)
     call poissonfast
-
-    !write(*,*) "maxp", maxval(p)
 
     ! Correct velocity 
     do i=1,nx
@@ -457,12 +441,6 @@ do t=1,tfin
             enddo
         enddo
     enddo
-
-    ! Advance particles (get velocity and advance according to particle type)
-    #if partflag==1
-    call get_velocity
-    call move_part
-    #endif
 
     !Check before next time step
     !check courant number
