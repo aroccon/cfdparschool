@@ -8,14 +8,12 @@
 ~~~
 
 
-#### GPU-based Finite difference code for DNS of Multiphase Homogenous isotropic turbulence (PFM and particles)
+#### GPU-based Finite difference code for DNS of Multiphase Homogenous isotropic turbulence (phase-field method)
 
 Main developer: A. Roccon 
 
 Future developments:
-* Conservative Allen-Cahn equation for phase-field modeling.
-* Particles tracking (interpolation is done)
-* FFTW for CPU debug run 
+* Conservative Allen-Cahn equation for phase-field modeling (CDI)
 
 Performance (only NS)
 * 64  x  64 x  64 | RTX5000 |   5 ms/timestep
@@ -25,12 +23,15 @@ Performance (only NS)
 #### Systems supported:
 * Unix + nvfortran 
 
-#### To run a simulation:
-* go to src folder and run ./go.sh
+### To compile the code
+* Use compile.sh in the src/folder
+
+#### To run a simulation (on Leonardo)
+* go to src folder and submit ./go.sh
 
 #### Parallelization strategy
-* The code is serial and exploit a single GPU, the poisson solver can be extended to use all the GPUs on the node 
+* The code is serial and exploit a single GPU.
 
 #### Output and restart files.
-* Files containing the Eulerian fields (u\_\*\*\*,v\_\*\*\*\*,w\_\*\*\*\*  etc.) and the particle positions (p\_\*\*\*) are stored in set_run/results
+* Files containing the Eulerian fields (u\_\*\*\*,v\_\*\*\*\*,w\_\*\*\*\*  etc.) and the particle positions (p\_\*\*\*) are stored in set_run/output
 
