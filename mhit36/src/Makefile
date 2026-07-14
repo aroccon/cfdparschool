@@ -2,7 +2,7 @@
 FC = pgf90
 
 # Compiler flags
-FFLAGS = -fast -gpu=managed  -cuda -cudalib=cufft -acc -Mfree -Mpreprocess -mcmodel=medium
+FFLAGS = -fast -gpu=mem:managed  -cuda -cudalib=cufft -acc -Mfree -Mpreprocess -mcmodel=medium
 #FFLAGS = -fast -gpu=managed -acc -cudalib -Minfo=accel
 
 # Executable name
