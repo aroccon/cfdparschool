@@ -72,7 +72,7 @@ use param
 implicit none
 integer :: gerr,i,j,k
 integer(kind=int_ptr_kind()) :: workSize(1)
-double precision :: kx, ky, kz
+double precision :: kxl, kyl, kzl
 
 ! create plans
 ! Creata plans (forth and back)
@@ -100,12 +100,12 @@ enddo
 
 !create delsq
 do i=1,nx
-    kx = 2.d0*pi*kk(i)/lx
+    kxl = 2.d0*pi*kk(i)/lx
     do j=1,nx
-	ky = 2.d0*pi*kk(j)/lx
+	kyl = 2.d0*pi*kk(j)/lx
         do k=1,nx
-            kz = 2.d0*pi*kk(k)/lx
-            delsq(i,j,k) = ( 2.d0*(cos(kx*dx) - 1.d0)  + 2.d0*(cos(ky*dx) - 1.d0)    + 2.d0*(cos(kz*dx) - 1.d0) ) / dx**2
+            kzl = 2.d0*pi*kk(k)/lx
+            delsq(i,j,k) = ( 2.d0*(cos(kxl*dx) - 1.d0)  + 2.d0*(cos(kyl*dx) - 1.d0)    + 2.d0*(cos(kzl*dx) - 1.d0) ) / dx**2
         enddo
     enddo
 enddo
