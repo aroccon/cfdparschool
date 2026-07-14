@@ -13,8 +13,7 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # load modules
-module load nvhpc/23.11
-module load cuda/12.1
+module load nvhpc/24.5
 module list
 
 ./mhit36

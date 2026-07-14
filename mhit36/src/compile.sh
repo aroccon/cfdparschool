@@ -1,7 +1,7 @@
 cd src
 module purge
-module load nvhpc/25.11
-module load cuda/13.0
+module load nvhpc/24.5
+module load cuda/12.2
 rm *.mod
 rm mhit36
 make clean
