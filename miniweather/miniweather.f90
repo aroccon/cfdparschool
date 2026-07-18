@@ -20,7 +20,7 @@ program miniweather
   real(rp), parameter :: xlen      = 2.e4_rp    !Length of the domain in the x-direction (meters)
   real(rp), parameter :: zlen      = 1.e4_rp    !Length of the domain in the z-direction (meters)
   real(rp), parameter :: hv_beta   = 0.05_rp    !How strong to diffuse the solution: hv_beta \in [0:1]
-  real(rp), parameter :: cfl       = 1.50_rp    !"Courant, Friedrichs, Lewy" number (for numerical stability)
+  real(rp), parameter :: cfl       = 1.00_rp    !"Courant, Friedrichs, Lewy" number (for numerical stability)
   real(rp), parameter :: max_speed = 450        !Assumed maximum wave speed during the simulation (speed of sound + speed of wind) (meter / sec)
   integer , parameter :: hs        = 2          !"Halo" size: number of cells beyond the MPI tasks's domain needed for a full "stencil" of information for reconstruction
   integer , parameter :: sten_size = 4          !Size of the stencil used for interpolation
@@ -45,7 +45,7 @@ program miniweather
   !The x-direction length is twice as long as the z-direction length
   integer , parameter :: nx = 800              !Number of total grid cells in the x dimension
   integer , parameter :: nz = 400              !Number of total grid cells in the z dimension
-  real(rp), parameter :: sim_time = 10       !How many seconds to run the simulation
+  real(rp), parameter :: sim_time = 500       !How many seconds to run the simulation
   real(rp), parameter :: output_freq = 10    !How frequently to output data to file (in seconds)
   integer , parameter :: data_spec_int = 5  !How to initialize the data (from 1 to 6)
   !! END USER-CONFIGURABLE PARAMETERS

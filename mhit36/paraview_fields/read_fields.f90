@@ -4,14 +4,14 @@ use commondata
 
 integer :: nstep
 character(len=40) :: namedir,namefile
-character(len=6) :: numfile
+character(len=8) :: numfile
 character(len=3) :: setnum
 logical :: check
 
 
 
-namedir='../results/'
-write(numfile,'(i6.6)') nstep
+namedir='../src/output/'
+write(numfile,'(i8.8)') nstep
 
 
 
